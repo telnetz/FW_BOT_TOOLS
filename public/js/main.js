@@ -522,6 +522,8 @@ async function Withdraw(){
 	const select = document.getElementById('FW_Withdraw');
 	const option = select.options[select.selectedIndex];
 	
+	const fees = await getTableRows("farmersworld", "config","");
+	
 	const withdraw_value = document.getElementById("withdraw_input").value;
 	const userWAX = document.getElementById("Name_Login").innerText;
 	
@@ -536,7 +538,7 @@ async function Withdraw(){
                                 }
                             ],
                             data: {
-								fee: 5,
+								fee: fees.fee,
                                 owner: userWAX,
 								quantities: [str]
                             },
