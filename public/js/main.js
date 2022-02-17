@@ -289,7 +289,7 @@ async function toolsClaim() {
     } catch (err) {}
 	
 	try{
-		const balance = await getTableRows("farmersworld", "accounts", userWAX);
+		//const balance = await getTableRows("farmersworld", "accounts", userWAX);
 		if (balance.energy < fwRecover) {
 			const current_food = parseInt(balance.balances[2].split(".")[0]);
 			let recover = current_food * 5;
